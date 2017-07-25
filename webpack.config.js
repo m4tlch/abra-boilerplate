@@ -30,16 +30,7 @@ function createConfig(env) {
             '#source-map' :
             '#cheap-module-eval-source-map',
         plugins: [
-            // new webpack.optimize.CommonsChunkPlugin({
-            //     name: 'vendor',
-            //     filename: '[name].js',
-            //     minChunks: Infinity
-            // }),
-            // uncomment in case of emergency code formatter need
-            // new PrettierPlugin({
-            //     printWidth: 80,
-            //     tabWidth: 4
-            // }),
+
             new webpack.ProvidePlugin({
                 $: "jquery",
                 jQuery: "jquery",
@@ -62,7 +53,8 @@ function createConfig(env) {
                 "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
                 "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
                 "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-                "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
+                "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+
             }
         },
         module: {
@@ -72,7 +64,20 @@ function createConfig(env) {
                 exclude: [
                     path.resolve(__dirname, "node_modules")
                 ]
-            }]
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    postcss: [require('postcss-cssnext')()],
+                    loaders: {
+                        scss: 'vue-style-loader!css-loader!sass-loader',
+                        sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
+                        js: 'babel-loader'
+                    }
+                }
+            }
+            ]
         }
     };
 

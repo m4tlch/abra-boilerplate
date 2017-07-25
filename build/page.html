@@ -1,9 +1,9 @@
-{% import "partials/_mixins.html" as mixins %}
 <!doctype html>
 <html>
+
   <head>
     <meta charset="utf-8">
-    <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+    <title>Index page</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -15,19 +15,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--vue.js-->
     <script src="https://unpkg.com/vue@2.4.2"></script>
-    {# {% include "../partials/_media-tags.html" %} #}
   </head>
-  <body>
 
+  <body>
     <!-- BEGIN content -->
     <div class="wrap">
-      {% block content %}{% endblock %}
+      <div id="app-demo">
+        <demo></demo>
+      </div>
+      <!--<h1>Index page</h1>-->
     </div>
     <!-- END content -->
-
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
-
   </body>
+
 </html>
