@@ -92,6 +92,7 @@ function createConfig(env) {
                 }
             })
         );
+        webpackConfig.resolve.alias.vue = path.resolve('node_modules', 'vue/dist/vue.min.js');
     }
 
     return webpackConfig;
