@@ -1,4 +1,4 @@
 import sayHello from './lib/sayHello.js';
-import './componets/app-demo';
+import './components/app-demo';
 
 sayHello();
