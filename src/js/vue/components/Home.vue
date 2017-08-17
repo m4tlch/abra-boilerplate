@@ -1,6 +1,5 @@
 <template>
   <div>
-    <img src="img/logo_top.png" alt="">
     <h1>abra-boilerplate</h1>
     <span>Webpack, sass, Vue js, linters, PostCSS, svg sprites, png sprites, everything that simplifies your life included.</span>
   </div>

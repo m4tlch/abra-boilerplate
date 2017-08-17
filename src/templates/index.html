@@ -8,15 +8,12 @@ title: Index page
 {# partial example #}
 {% include "partials/_header.html" %}
 
-	
-	{# variable example #}
-	<!--<h1>{{title}}</h1>-->
 
-	
-
-
-
-
+<div id="content">
+    <app-content>
+        <router-view></router-view>
+    </app-content>
+</div>
 
 
 {% endblock %}
